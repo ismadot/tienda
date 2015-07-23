@@ -22,6 +22,9 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers;
 
+    protected $redirectPath = '/';
+    //protected $redirectAfterLogout = "/auth/login";
+
     /**
      * Create a new authentication controller instance.
      *
@@ -42,8 +45,11 @@ class AuthController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
+            'last_name' => 'max:255',
             'email' => 'required|email|max:255|unique:users',
+            'user' => 'required|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
+            'address' => 'required',
         ]);
     }
 
@@ -57,8 +63,13 @@ class AuthController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'last_name' => $data['last_name'],
             'email' => $data['email'],
+            'user' => $data['user'],
+            'type' => "user",
+            'active' => 1,
             'password' => bcrypt($data['password']),
+            'address' => $data['address'],
         ]);
     }
 }

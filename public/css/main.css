@@ -106,3 +106,12 @@ transition: all 0.3s ease-in-out;
 {
 	width: 50px;
 }
+
+/* Detalle del pedido ------------*/
+.page
+{
+	background: #fff;
+	border-radius: 1em;
+	margin-bottom: 30px;
+	padding: 1em;
+}

@@ -52,10 +52,53 @@ Route::get('cart/update/{product}/{quantity}', [
 	'uses' => 'CartController@update'
 ]);
 
+Route::get('order-detail', [
+	'middleware' => 'auth',
+	'as' => 'order-detail',
+	'uses' => 'CartController@orderDetail'
+]);
 
 
+// Authentication routes...
+Route::get('auth/login', [
+	'as' => 'login-get',
+	'uses' => 'Auth\AuthController@getLogin'
+]);
 
+Route::post('auth/login', [
+	'as' => 'login-post',
+	'uses' => 'Auth\AuthController@postLogin'
+]);
 
+Route::get('auth/logout', [
+	'as' => 'logout',
+	'uses' => 'Auth\AuthController@getLogout'
+]);
+
+// Registration routes...
+Route::get('auth/register', [
+	'as' => 'register-get',
+	'uses' => 'Auth\AuthController@getRegister'
+]);
+
+Route::post('auth/register', [
+	'as' => 'register-post',
+	'uses' => 'Auth\AuthController@postRegister'
+]);
+
+// Paypal
+
+// Enviamos nuestro pedido a PayPal
+Route::get('payment', array(
+	'as' => 'payment',
+	'uses' => 'PaypalController@postPayment',
+));
+
+// Después de realizar el pago Paypal redirecciona a esta ruta
+Route::get('payment/status', array(
+	'as' => 'payment.status',
+	'uses' => 'PaypalController@getPaymentStatus',
+));
 
 
 

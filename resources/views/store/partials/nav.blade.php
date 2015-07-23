@@ -16,12 +16,7 @@
         <li><a href="{{ route('cart-show') }}"><i class="fa fa-shopping-cart"></i></a></li>
         <li><a href="#">Conocenos</a></li>
         <li><a href="#">Contacto</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-user"></i> <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Iniciar sesión</a></li>
-          </ul>
-        </li>
+        @include('store.partials.menu-user')
       </ul>
     </div>
   </div>
