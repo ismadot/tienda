@@ -1,0 +1,44 @@
+body
+{
+    background:#f0f0f0;
+    font-family: 'Poiret One', cursive;
+}
+
+h1
+{
+    color:orange;
+}
+
+h2,h3,h4,h5,h6
+{
+    color:#444;
+    /*font-family: 'Lobster', cursive;*/
+}
+
+footer
+{
+    background:#222;
+    padding:20px;
+}
+
+.page
+{
+    background:#fff;
+    border-radius:1em;
+    margin:1em;
+    min-height:500px;
+    padding:1em;
+}
+
+
+.icon-home
+{
+    color: #666;
+    font-size: 60px;
+    margin: 20px;
+}
+
+.btn-home-admin
+{
+    font-size:25px;
+}
