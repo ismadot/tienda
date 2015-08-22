@@ -21,7 +21,7 @@
             <div class="col-md-6">
                 <div class="panel">
                     <i class="fa fa-shopping-cart  icon-home"></i>
-                    <a href="#" class="btn btn-warning btn-block btn-home-admin">PRODUCTOS</a>
+                    <a href="{{ route('admin.product.index') }}" class="btn btn-warning btn-block btn-home-admin">PRODUCTOS</a>
                 </div>
             </div>
                     

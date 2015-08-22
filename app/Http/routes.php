@@ -20,6 +20,12 @@ Route::bind('category', function($category){
     return App\Category::find($category);
 });
 
+// User dependency injection
+Route::bind('user', function($user){
+    return App\User::find($user);
+});
+
+
 Route::get('/', [
 	'as' => 'home',
 	'uses' => 'StoreController@index'
@@ -115,6 +121,9 @@ Route::get('admin/home', function(){
 Route::resource('admin/category', 'Admin\CategoryController');
 
 Route::resource('admin/product', 'Admin\ProductController');
+
+Route::resource('admin/user', 'Admin\UserController');
+
 
 
 
